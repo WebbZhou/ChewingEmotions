@@ -95,7 +95,7 @@ function draw() {
     fill(0);
     textSize(32);
     textFont(font2);
-    text(": EAT ME! -->", 340, 43.5);
+    text(": EAT ME! -->", 340, 46);
 
     if (isHovered) {
       // Display the hover image when the mouse is hovering over the apple
@@ -129,7 +129,7 @@ function draw() {
   fill(0);
   textSize(32);
   textFont(font2);
-  text("CHEWING EMOTIONS", 30, 43.5);
+  text("CHEWING EMOTIONS", 30, 46);
 
   noStroke(0);
   fill(0);
