@@ -1,3 +1,4 @@
+
 let data; // Variable to store the loaded dataset
 let start_x = 300; // Start x-coordinate of the line
 let start_x2 = 1150;
@@ -71,7 +72,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1800, 1100); // Adjust the canvas size as per your preference
+  createCanvas(1792,1010); // Adjust the canvas size as per your preference
   textAlign(LEFT);
   // Load the cursor image
   cursorImage = loadImage("cursor.png");
@@ -84,6 +85,7 @@ function setup() {
 
 function draw() {
   background(255); // Set the background color
+  print(windowWidth, windowHeight);
 
   image(images[currentImageIndex], 50, 80);
   image(Eimages[currentImageIndex], 900, 80);
@@ -95,7 +97,7 @@ function draw() {
     fill(0);
     textSize(32);
     textFont(font2);
-    text(": EAT ME! -->", 340, 46);
+    text(": EAT ME! -->", 340, 53);
 
     if (isHovered) {
       // Display the hover image when the mouse is hovering over the apple
@@ -108,14 +110,14 @@ function draw() {
 
     stroke(0);
     strokeWeight(1);
-    line(0, 80, 2000, 80);
+    line(0, 80, windowWidth, 80);
     // Add more text or any other elements as needed
   }
 
   textAlign(CENTER,CENTER);
   noStroke(0);
   textSize(32);
-  textFont("Din");
+  textFont(font1);
   fill(0, alphaLeft);
   text(minddata[currentIndex][0], 450, 180);
   fill(0, alphaRight);
@@ -129,7 +131,7 @@ function draw() {
   fill(0);
   textSize(32);
   textFont(font2);
-  text("CHEWING EMOTIONS", 30, 46);
+  text("CHEWING EMOTIONS", 30, 53);
 
   noStroke(0);
   fill(0);
@@ -154,10 +156,12 @@ function draw() {
   text("Happy", end_x2 + 18, y2 + 3);
 
   // Draw the line
-  stroke(0);
-  strokeWeight(1);
-  line(start_x, y, end_x, y);
-  line(start_x2, y2, end_x2, y2);
+  // stroke(160, 197, 120);
+  // strokeWeight(3);
+  // line(start_x, y, end_x, y);
+  // stroke(255, 159, 28);
+  // strokeWeight(3);
+  // line(start_x2, y2, end_x2, y2);
 
   // Get the value from the current row in the dataset
   let newData = data.getNum(index, 'mood_index');
@@ -175,10 +179,13 @@ function draw() {
   x2 += deltaX2 * easing;
 
   // Draw the circle at the position on the line
-  fill(255);
-  stroke(0);
-  ellipse(x, y, 10, 10);
-  ellipse(x2, y2, 10, 10);
+  fill(160, 197, 120);
+  stroke(160, 197, 120);
+  ellipse(x, y, 20, 20);
+
+  fill(255, 159, 28);
+  stroke(255, 159, 28);
+  ellipse(x2, y2, 20, 20);
 
   if (isPopupOpen) {
     print("pp")
