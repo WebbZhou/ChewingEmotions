@@ -59,6 +59,8 @@ function preload() {
   appleImage = loadImage("Apple 01.png");
   hoverImage = loadImage("Apple 02.png");
   eatingSound = loadSound('eatingSoundEffect.mp3');
+  font1 = loadFont("DIN-Regular.otf");
+  font2 = loadFont("DIN-Medium.otf");
 
   for (let i = 0; i < 26; i++) {
     let img = loadImage(`image${i}.png`);
@@ -92,7 +94,7 @@ function draw() {
     noStroke(0);
     fill(0);
     textSize(32);
-    textFont("Din-Medium");
+    textFont(font2);
     text(": EAT ME! -->", 340, 43.5);
 
     if (isHovered) {
@@ -126,25 +128,25 @@ function draw() {
   noStroke(0);
   fill(0);
   textSize(32);
-  textFont("Din-Medium");
+  textFont(font2);
   text("CHEWING EMOTIONS", 30, 43.5);
 
   noStroke(0);
   fill(0);
-  textFont("Din");
+  textFont(font1);
   textSize(12);
   text("We are Webb and Evie, and this website will show you our dietary habits over the course of three days \nand how they affect our emotions. By clicking the mouse, you can see the changes in our moods with each bite, \nas the content and quantity of food have an impact on our feelings. So go ahead, click the mouse, and see what changes!"
   , 850, 30);
 
   noStroke(0);
   fill(0);
-  textFont("Din");
+  textFont(font1);
   textSize(12);
   text("Webb Zhou & Evie Huang\nLondon College of Communication\nUniversity of the Arts London"
   , 1570, 30);
 
   fill(0);
-  textFont("Din");
+  textFont(font1);
   textSize(12);
   text("Depress", start_x - 60, y + 3);
   text("Happy", end_x + 18, y + 3);
@@ -325,13 +327,13 @@ function drawLineChart() {
   noStroke(0);
   fill(0);
   textSize(12);
-  textFont("Din");
+  textFont(font1);
   text("Depress", 180, chartY + chartHeight);
 
   noStroke(0);
   fill(0);
   textSize(12);
-  textFont("Din");
+  textFont(font1);
   text("Happy", 180, chartY);
 
   fill(180);
@@ -356,7 +358,7 @@ function drawLineChart() {
   noStroke(0);
   fill(0);
   textSize(12);
-  textFont("Din");
+  textFont(font1);
   text("0", 246, chartY + chartHeight + 30);
   text("1", 377.5, chartY + chartHeight + 30);
   text("2", 507, chartY + chartHeight + 30);
@@ -383,7 +385,7 @@ function drawLineChart() {
     noStroke(0);
     fill(0);
     textSize(12);
-    textFont("Din");
+    textFont(font1);
     text("Noodles with sausages", 100,314)
     text("Egg tart", 180,345)
     text("Egg", 202,453)
